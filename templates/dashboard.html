@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>💎 Personal Finance Manager</h1>
+
+    <div class="summary">
+        <div class="card income">
+            Income
+            <span>₹ {{ income }}</span>
+        </div>
+        <div class="card expense">
+            Expense
+            <span>₹ {{ expense }}</span>
+        </div>
+        <div class="card balance">
+            Balance
+            <span>₹ {{ balance }}</span>
+        </div>
+    </div>
+
+    <h2>Add Transaction</h2>
+
+    <form method="post">
+        <select name="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+
+        <input name="category" placeholder="Category" required>
+        <input name="amount" type="number" step="0.01" placeholder="Amount" required>
+        <button>Add</button>
+    </form>
+
+    <h2>Transaction History</h2>
+
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+
+        {% for t in transactions %}
+        <tr>
+            <td>{{ t[0] }}</td>
+            <td>{{ t[1] }}</td>
+            <td>₹ {{ t[2] }}</td>
+            <td>{{ t[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="actions">
+        <a href="/report">📊 Report</a>
+        <a href="/logout">🚪 Logout</a>
+    </div>
+</div>
+
+</body>
+</html>

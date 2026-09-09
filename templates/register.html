@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | Finance Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="auth-container">
+    <h2>📝 Create Account</h2>
+    <p class="subtitle">Start tracking your finances today</p>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Choose Username" required>
+        <input type="password" name="password" placeholder="Choose Password" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p class="switch">
+        Already have an account?
+        <a href="{{ url_for('login') }}">Login here</a>
+    </p>
+</div>
+
+</body>
+</html>

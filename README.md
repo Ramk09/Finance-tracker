@@ -52,3 +52,24 @@ Finance-tracker/
     ├── login.html
     ├── register.html
     └── dashboard.html
+
+
+
+
+---
+
+## 👨‍💻 Author
+
+### Ram Kurra
+
+**GitHub:** [Ramk09](https://github.com/Ramk09)
+
+I developed this project to practice and demonstrate my skills in:
+
+- 🐍 Python
+- 🌐 Flask
+- 🗄️ SQLite
+- 🎨 HTML & CSS
+- 🐙 Git & GitHub
+
+This project represents my hands-on learning and development in Python and web application development.
